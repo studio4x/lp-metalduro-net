@@ -506,6 +506,37 @@ img {
 /* =========================================
    COMO FUNCIONA (TIMELINE)
 ========================================= */
+.how-it-works {
+  background-color: var(--accent-gold) !important;
+  color: var(--bg-main);
+}
+
+.how-it-works .section-title {
+  color: var(--bg-main) !important;
+}
+
+.how-it-works .section-subtitle {
+  color: rgba(15, 23, 42, 0.8) !important;
+}
+
+.how-it-works .timeline::before {
+  background: rgba(15, 23, 42, 0.2);
+}
+
+.how-it-works .step-number {
+  background-color: var(--accent-gold);
+  border: 2px solid var(--bg-main);
+  color: var(--bg-main);
+}
+
+.how-it-works .step-content h4 {
+  color: #1e3a8a; /* Azul de Destaque */
+}
+
+.how-it-works .step-content p {
+  color: rgba(15, 23, 42, 0.9);
+}
+
 .timeline {
   max-width: 800px;
   margin: 0 auto;
