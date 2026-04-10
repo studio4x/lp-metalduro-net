@@ -67,6 +67,67 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Estilos específicos para o carrossel de materiais */
+        .materials-carousel-wrapper {
+            position: relative;
+            padding: 0 40px;
+            margin-top: 40px;
+        }
+        .materials-carousel-container {
+            overflow: hidden;
+            width: 100%;
+        }
+        .materials-carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            gap: 20px;
+        }
+        .materials-carousel-track .material-card {
+            flex: 0 0 calc(33.333% - 14px);
+            min-width: calc(33.333% - 14px);
+            margin-bottom: 0;
+        }
+        .materials-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary-color, #0056b3);
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .materials-nav:hover {
+            background: var(--primary-dark, #004494);
+            transform: translateY(-50%) scale(1.1);
+        }
+        .materials-nav.prev { left: -10px; }
+        .materials-nav.next { right: -10px; }
+
+        @media (max-width: 992px) {
+            .materials-carousel-track .material-card {
+                flex: 0 0 calc(50% - 10px);
+                min-width: calc(50% - 10px);
+            }
+        }
+        @media (max-width: 600px) {
+            .materials-carousel-track .material-card {
+                flex: 0 0 100%;
+                min-width: 100%;
+            }
+            .materials-carousel-wrapper { padding: 0 10px; }
+            .materials-nav { display: none; }
+        }
+    </style>
 </head>
 <body>
 
@@ -202,80 +263,85 @@
                     <p class="section-subtitle single-line">Compramos e reciclamos uma ampla gama de materiais contendo tungstênio</p>
                 </div>
 
-                <div class="materials-grid">
-                    <!-- Item 1 -->
-                    <div class="material-card reveal-up">
-                        <div class="material-img" style="background-image: url('https://zapsucatas.com.br/wp-content/uploads/2025/09/metal-duro-5-800x600.jpg')"></div>
-                        <div class="material-content">
-                            <h3>Insertos de metal duro</h3>
-                            <p>Pastilhas de corte e usinagem de diversos formatos e desgastes.</p>
-                            <a href="https://wa.me/5511943550880?text=Olá%2C%20gostaria%20de%20cotar%20Insertos%20de%20metal%20duro" class="text-link" target="_blank">Solicitar cotação <i class="ph ph-arrow-right"></i></a>
+                <div class="materials-carousel-wrapper reveal-up">
+                    <button class="materials-nav prev" id="matPrev"><i class="ph ph-caret-left"></i></button>
+                    <div class="materials-carousel-container">
+                        <div class="materials-carousel-track" id="materialsTrack">
+                            <!-- Item 1 -->
+                            <div class="material-card">
+                                <div class="material-img" style="background-image: url('https://zapsucatas.com.br/wp-content/uploads/2025/09/metal-duro-5-800x600.jpg')"></div>
+                                <div class="material-content">
+                                    <h3>Insertos de metal duro</h3>
+                                    <p>Pastilhas de corte e usinagem de diversos formatos e desgastes.</p>
+                                    <a href="https://wa.me/5511943550880?text=Olá%2C%20gostaria%20de%20cotar%20Insertos%20de%20metal%20duro" class="text-link" target="_blank">Solicitar cotação <i class="ph ph-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <!-- Item 2 -->
+                            <div class="material-card">
+                                <div class="material-img" style="background-image: url('https://zapsucatas.com.br/wp-content/uploads/2025/10/metal-duro-6-720x600.jpg')"></div>
+                                <div class="material-content">
+                                    <h3>Brocas e Ferramentas</h3>
+                                    <p>Brocas sólidas, fresas de topo e outras ferramentas de metal duro.</p>
+                                    <a href="https://wa.me/5511943550880?text=Olá%2C%20gostaria%20de%20cotar%20Brocas%20e%20ferramentas" class="text-link" target="_blank">Solicitar cotação <i class="ph ph-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <!-- Item 3 -->
+                            <div class="material-card">
+                                <div class="material-img" style="background-image: url('https://zapsucatas.com.br/wp-content/uploads/2026/03/metal-duro-usado-709x600.jpg')"></div>
+                                <div class="material-content">
+                                    <h3>Pastilhas e Widias</h3>
+                                    <p>Todo tipo de widia e peças usadas provenientes da indústria e retíficas.</p>
+                                    <a href="https://wa.me/5511943550880?text=Olá%2C%20gostaria%20de%20cotar%20Pastilhas%20e%20Widia" class="text-link" target="_blank">Solicitar cotação <i class="ph ph-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <!-- Item 4 -->
+                            <div class="material-card">
+                                <div class="material-img" style="background-image: url('https://zapsucatas.com.br/wp-content/uploads/2025/09/metal-duro-4-768x600.jpeg')"></div>
+                                <div class="material-content">
+                                    <h3>Sucata de Tungstênio</h3>
+                                    <p>Sobras industriais com alto teor de tungstênio, independente do formato.</p>
+                                    <a href="https://wa.me/5511943550880" class="text-link" target="_blank">Solicitar cotação <i class="ph ph-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <!-- Item 5 -->
+                            <div class="material-card">
+                                <div class="material-img" style="background-image: url('https://zapsucatas.com.br/wp-content/uploads/2025/10/po-de-carbeto-tungstenio-1.jpg')"></div>
+                                <div class="material-content">
+                                    <h3>Pó de Tungstênio</h3>
+                                    <p>Pós derivados de desgaste ou rebarbas de processos metalúrgicos.</p>
+                                    <a href="https://wa.me/5511943550880" class="text-link" target="_blank">Solicitar cotação <i class="ph ph-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <!-- Item 6 -->
+                            <div class="material-card">
+                                <div class="material-img" style="background-image: url('https://zapsucatas.com.br/wp-content/uploads/2025/10/lama-tungstenio.jpg')"></div>
+                                <div class="material-content">
+                                    <h3>Lama de Tungstênio / Metal Duro</h3>
+                                    <p>Subproduto ou resíduo líquido/pastoso originário de usinagens intensas.</p>
+                                    <a href="https://wa.me/5511943550880" class="text-link" target="_blank">Solicitar cotação <i class="ph ph-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <!-- Item 7 -->
+                            <div class="material-card">
+                                <div class="material-img" style="background-image: url('https://zapsucatas.com.br/wp-content/uploads/2025/09/metal-duro-5-800x600.jpg')"></div>
+                                <div class="material-content">
+                                    <h3>Borra de Retífica</h3>
+                                    <p>Resíduos sólidos or borras resultantes de serviços de retificação.</p>
+                                    <a href="https://wa.me/5511943550880" class="text-link" target="_blank">Solicitar cotação <i class="ph ph-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <!-- Item 8 -->
+                            <div class="material-card">
+                                <div class="material-img" style="background-image: url('https://zapsucatas.com.br/wp-content/uploads/2026/04/filamentos-de-tungstenio.jpg')"></div>
+                                <div class="material-content">
+                                    <h3>Filamentos de Tungstênio</h3>
+                                    <p>Filamentos originados de sistemas elétricos ou fornos industriais.</p>
+                                    <a href="https://wa.me/5511943550880" class="text-link" target="_blank">Solicitar cotação <i class="ph ph-arrow-right"></i></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <!-- Item 2 -->
-                    <div class="material-card reveal-up">
-                        <div class="material-img" style="background-image: url('https://zapsucatas.com.br/wp-content/uploads/2025/10/metal-duro-6-720x600.jpg')"></div>
-                        <div class="material-content">
-                            <h3>Brocas e Ferramentas</h3>
-                            <p>Brocas sólidas, fresas de topo e outras ferramentas de metal duro.</p>
-                            <a href="https://wa.me/5511943550880?text=Olá%2C%20gostaria%20de%20cotar%20Brocas%20e%20ferramentas" class="text-link" target="_blank">Solicitar cotação <i class="ph ph-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <!-- Item 3 -->
-                    <div class="material-card reveal-up">
-                        <div class="material-img" style="background-image: url('https://zapsucatas.com.br/wp-content/uploads/2026/03/metal-duro-usado-709x600.jpg')"></div>
-                        <div class="material-content">
-                            <h3>Pastilhas e Widias</h3>
-                            <p>Todo tipo de widia e peças usadas provenientes da indústria e retíficas.</p>
-                            <a href="https://wa.me/5511943550880?text=Olá%2C%20gostaria%20de%20cotar%20Pastilhas%20e%20Widia" class="text-link" target="_blank">Solicitar cotação <i class="ph ph-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <!-- Item 4 -->
-                    <div class="material-card reveal-up">
-                        <div class="material-img" style="background-image: url('https://zapsucatas.com.br/wp-content/uploads/2025/09/metal-duro-4-768x600.jpeg')"></div>
-                        <div class="material-content">
-                            <h3>Sucata de Tungstênio</h3>
-                            <p>Sobras industriais com alto teor de tungstênio, independente do formato.</p>
-                            <a href="https://wa.me/5511943550880" class="text-link" target="_blank">Solicitar cotação <i class="ph ph-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <!-- Item 5 -->
-                    <div class="material-card reveal-up">
-                        <div class="material-img" style="background-image: url('https://zapsucatas.com.br/wp-content/uploads/2025/10/po-de-carbeto-tungstenio-1.jpg')"></div>
-                        <div class="material-content">
-                            <h3>Pó de Tungstênio</h3>
-                            <p>Pós derivados de desgaste ou rebarbas de processos metalúrgicos.</p>
-                            <a href="https://wa.me/5511943550880" class="text-link" target="_blank">Solicitar cotação <i class="ph ph-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <!-- Item 6 -->
-                    <div class="material-card reveal-up">
-                        <div class="material-img" style="background-image: url('https://zapsucatas.com.br/wp-content/uploads/2025/10/lama-tungstenio.jpg')"></div>
-                        <div class="material-content">
-                            <h3>Lama de Tungstênio / Metal Duro</h3>
-                            <p>Subproduto ou resíduo líquido/pastoso originário de usinagens intensas.</p>
-                            <a href="https://wa.me/5511943550880" class="text-link" target="_blank">Solicitar cotação <i class="ph ph-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <!-- Item 7 -->
-                    <div class="material-card reveal-up">
-                        <div class="material-img" style="background-image: url('https://zapsucatas.com.br/wp-content/uploads/2025/09/metal-duro-5-800x600.jpg')"></div>
-                        <div class="material-content">
-                            <h3>Borra de Retífica</h3>
-                            <p>Resíduos sólidos or borras resultantes de serviços de retificação.</p>
-                            <a href="https://wa.me/5511943550880" class="text-link" target="_blank">Solicitar cotação <i class="ph ph-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <!-- Item 8 -->
-                    <div class="material-card reveal-up">
-                        <div class="material-img" style="background-image: url('https://zapsucatas.com.br/wp-content/uploads/2026/04/filamentos-de-tungstenio.jpg')"></div>
-                        <div class="material-content">
-                            <h3>Filamentos de Tungstênio</h3>
-                            <p>Filamentos originados de sistemas elétricos ou fornos industriais.</p>
-                            <a href="https://wa.me/5511943550880" class="text-link" target="_blank">Solicitar cotação <i class="ph ph-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    
+                    <button class="materials-nav next" id="matNext"><i class="ph ph-caret-right"></i></button>
                 </div>
             </div>
         </section>
@@ -676,5 +742,67 @@
 
     <!-- JS -->
     <script src="js/script.js"></script>
+    <script>
+        // Lógica para o carrossel de materiais em loop infinito com 3 colunas
+        document.addEventListener('DOMContentLoaded', function() {
+            const track = document.getElementById('materialsTrack');
+            const prevBtn = document.getElementById('matPrev');
+            const nextBtn = document.getElementById('matNext');
+            
+            if (!track || !prevBtn || !nextBtn) return;
+
+            const originalCards = Array.from(track.children);
+            const cardCount = originalCards.length;
+            
+            // Clonar cards para o loop infinito (clonamos o início e o fim)
+            originalCards.forEach(card => {
+                const clone = card.cloneNode(true);
+                track.appendChild(clone);
+            });
+            originalCards.forEach(card => {
+                const clone = card.cloneNode(true);
+                track.insertBefore(clone, track.firstChild);
+            });
+
+            let currentIndex = cardCount;
+            const updateCarousel = (instant = false) => {
+                const cardWidth = track.querySelector('.material-card').offsetWidth + 20; // 20 is the gap
+                if (instant) track.style.transition = 'none';
+                else track.style.transition = 'transform 0.5s ease-in-out';
+                
+                track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+            };
+
+            // Posição inicial (pula os clones iniciais)
+            setTimeout(() => updateCarousel(true), 100);
+
+            nextBtn.addEventListener('click', () => {
+                currentIndex++;
+                updateCarousel();
+                
+                if (currentIndex >= cardCount * 2) {
+                    setTimeout(() => {
+                        currentIndex = cardCount;
+                        updateCarousel(true);
+                    }, 500);
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                currentIndex--;
+                updateCarousel();
+                
+                if (currentIndex <= cardCount - 1) {
+                    setTimeout(() => {
+                        currentIndex = (cardCount * 2) - 1;
+                        updateCarousel(true);
+                    }, 500);
+                }
+            });
+
+            // Reajustar ao redimensionar a janela
+            window.addEventListener('resize', () => updateCarousel(true));
+        });
+    </script>
 </body>
 </html>
