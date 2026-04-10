@@ -8,10 +8,10 @@
   --bg-light: #f8fafc;
   --bg-white: #FFFFFF;
   
-  --accent-gold: #f97316; /* Laranja Industrial (Destaque principal) */
-  --accent-gold-hover: #ea580c;
+  --accent-gold: #ff9f43; /* Laranja Pastel Premium */
+  --accent-gold-hover: #f39c12;
   
-  --accent-blue: #334155; /* Slate Metálico */
+  --accent-blue: #0f172a; /* Azul Marinho (para detalhes escuros) */
   --accent-blue-hover: #475569;
   
   --text-primary: #1e293b;
@@ -525,16 +525,17 @@ img {
 
 .how-it-works .step-number {
   background-color: var(--accent-gold);
-  border: 2px solid var(--bg-main);
-  color: var(--bg-main);
+  border: 2px solid var(--text-white);
+  color: var(--text-white);
 }
 
 .how-it-works .step-content h4 {
-  color: #1e3a8a; /* Azul de Destaque */
+  color: var(--text-white); /* Texto Branco solicitado */
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
 .how-it-works .step-content p {
-  color: rgba(15, 23, 42, 0.9);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .timeline {
