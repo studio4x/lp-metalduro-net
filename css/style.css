@@ -511,35 +511,34 @@ img {
    COMO FUNCIONA (TIMELINE)
 ========================================= */
 .how-it-works {
-  background-color: var(--accent-gold) !important;
-  color: var(--bg-main);
-}
-
-.how-it-works .section-title {
-  color: var(--bg-main) !important;
-}
-
-.how-it-works .section-subtitle {
-  color: rgba(15, 23, 42, 0.8) !important;
-}
-
-.how-it-works .timeline::before {
-  background: rgba(15, 23, 42, 0.2);
-}
-
-.how-it-works .step-number {
-  background-color: var(--accent-gold);
-  border: 2px solid var(--text-white);
+  background-color: var(--bg-main) !important;
   color: var(--text-white);
 }
 
+.how-it-works .section-title {
+  color: var(--text-white) !important;
+}
+
+.how-it-works .section-subtitle {
+  color: var(--text-light) !important;
+}
+
+.how-it-works .timeline::before {
+  background: rgba(255, 159, 67, 0.3);
+}
+
+.how-it-works .step-number {
+  background-color: var(--bg-darker);
+  border: 2px solid var(--accent-gold);
+  color: var(--accent-gold);
+}
+
 .how-it-works .step-content h4 {
-  color: var(--text-white); /* Texto Branco solicitado */
-  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  color: var(--accent-gold); /* Laranja Pastel para destaque */
 }
 
 .how-it-works .step-content p {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--text-light);
 }
 
 .timeline {
