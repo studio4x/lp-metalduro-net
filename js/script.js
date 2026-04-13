@@ -139,7 +139,8 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Ajuste inicial de posição sem transição
         track.style.transition = 'none';
-        track.style.transform = `translateX(-${currentIndex * (100 / 3)}%)`;
+        const initialSlideWidth = track.querySelector('.carousel-slide').offsetWidth;
+        track.style.transform = `translateX(-${currentIndex * initialSlideWidth}px)`;
         
         // Setup indicators baseados apenas nos slides originais
         originalSlides.forEach((_, index) => {
@@ -166,9 +167,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const moveToSlide = (index, withTransition = true) => {
             if (isTransitioning && withTransition) return;
             
+            const slideWidth = track.querySelector('.carousel-slide').offsetWidth;
             isTransitioning = true;
             track.style.transition = withTransition ? 'transform 0.5s ease-in-out' : 'none';
-            track.style.transform = `translateX(-${index * (100 / 3)}%)`;
+            track.style.transform = `translateX(-${index * slideWidth}px)`;
             
             currentIndex = index;
             updateIndicators(currentIndex);
@@ -199,5 +201,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 moveToSlide(currentIndex + 1);
             }
         }, 5000);
+
+        // Recalcular posição no redimensionamento da janela
+        window.addEventListener('resize', () => {
+            moveToSlide(currentIndex, false);
+        });
     }
 });
