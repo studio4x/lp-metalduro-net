@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const encodedText = encodeURIComponent(zapText);
-            const wppNumber = '5511943550880';
+            const wppNumber = '5511940072477';
             const wppUrl = `https://wa.me/${wppNumber}?text=${encodedText}`;
 
             // Abre navegação em nova aba
