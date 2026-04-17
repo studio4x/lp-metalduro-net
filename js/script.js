@@ -174,6 +174,13 @@ document.addEventListener('DOMContentLoaded', () => {
             
             currentIndex = index;
             updateIndicators(currentIndex);
+            
+            // Fallback de segurança caso a animação "mastigue" o pointer
+            if(withTransition) {
+                setTimeout(() => {
+                    isTransitioning = false;
+                }, 550);
+            }
         };
         
         track.addEventListener('transitionend', () => {
