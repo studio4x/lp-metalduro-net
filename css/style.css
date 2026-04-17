@@ -696,8 +696,8 @@ img {
 }
 
 .carousel-slide {
-  flex: 0 0 calc(100% / 3);
-  min-width: calc(100% / 3);
+  flex: 0 0 calc(100% / 5);
+  min-width: calc(100% / 5);
   height: 100%;
   padding: 0 5px;
   scroll-snap-align: start;
