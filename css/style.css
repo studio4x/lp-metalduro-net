@@ -685,13 +685,22 @@ img {
 .carousel-track {
   display: flex;
   height: 100%;
-  transition: transform 0.5s ease-in-out;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Oculta a barra inferior de scroll nativa */
+}
+
+/* Oculta scrollbar em Chrome e Safaris */
+.carousel-track::-webkit-scrollbar {
+  display: none;
 }
 
 .carousel-slide {
-  min-width: 33.333%;
+  min-width: 50%;
   height: 100%;
   padding: 0 5px;
+  scroll-snap-align: start;
 }
 
 .carousel-slide img {

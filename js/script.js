@@ -118,100 +118,33 @@ document.addEventListener('DOMContentLoaded', () => {
         yearSpan.textContent = new Date().getFullYear();
     }
     
-    /* --- CARROSSEL --- */
+    /* --- GALERIA DE FOTOS (SCROLL NATIVO) --- */
     const track = document.querySelector('.carousel-track');
-    const originalSlides = Array.from(document.querySelectorAll('.carousel-slide') || []);
     const nextButton = document.querySelector('.carousel-button.next');
     const prevButton = document.querySelector('.carousel-button.prev');
-    const indicatorsContainer = document.querySelector('.carousel-indicators');
     
-    if (track && originalSlides.length > 0) {
-        // Clonar primeiros e últimos itens para o loop infinito
-        // Clonamos 3 de cada para garantir que o preenchimento visual de 3 colunas funcione no pulo
-        const firstClones = originalSlides.slice(0, 3).map(s => s.cloneNode(true));
-        const lastClones = originalSlides.slice(-3).map(s => s.cloneNode(true));
-        
-        firstClones.forEach(clone => track.appendChild(clone));
-        lastClones.reverse().forEach(clone => track.insertBefore(clone, track.firstChild));
-        
-        let currentIndex = 3; // Começa no primeiro slide original (após os 3 clones iniciais)
-        const slideCount = originalSlides.length;
-        
-        // Ajuste inicial de posição sem transição
-        track.style.transition = 'none';
-        const initialSlideWidth = track.querySelector('.carousel-slide').offsetWidth;
-        track.style.transform = `translateX(-${currentIndex * initialSlideWidth}px)`;
-        
-        // Setup indicators baseados apenas nos slides originais
-        originalSlides.forEach((_, index) => {
-            const indicator = document.createElement('button');
-            indicator.classList.add('indicator');
-            if (index === 0) indicator.classList.add('active');
-            indicator.addEventListener('click', () => {
-                moveToSlide(index + 3);
-            });
-            indicatorsContainer.appendChild(indicator);
-        });
-        
-        const indicators = Array.from(document.querySelectorAll('.indicator'));
-        let isTransitioning = false;
-
-        const updateIndicators = (index) => {
-            let visualIndex = (index - 3) % slideCount;
-            if (visualIndex < 0) visualIndex += slideCount;
-            
-            indicators.forEach(ind => ind.classList.remove('active'));
-            if (indicators[visualIndex]) indicators[visualIndex].classList.add('active');
-        };
-        
-        const moveToSlide = (index, withTransition = true) => {
-            if (isTransitioning && withTransition) return;
-            
-            const slideWidth = track.querySelector('.carousel-slide').offsetWidth;
-            isTransitioning = true;
-            track.style.transition = withTransition ? 'transform 0.5s ease-in-out' : 'none';
-            track.style.transform = `translateX(-${index * slideWidth}px)`;
-            
-            currentIndex = index;
-            updateIndicators(currentIndex);
-            
-            // Fallback de segurança caso a animação "mastigue" o pointer
-            if(withTransition) {
-                setTimeout(() => {
-                    isTransitioning = false;
-                }, 550);
-            }
-        };
-        
-        track.addEventListener('transitionend', () => {
-            isTransitioning = false;
-            
-            // Lógica de loop infinito: se estiver nos clones, pula para o real correspondente
-            if (currentIndex >= slideCount + 3) {
-                moveToSlide(3, false);
-            } else if (currentIndex < 3) {
-                moveToSlide(slideCount + currentIndex, false);
-            }
-        });
-        
+    if (track && nextButton && prevButton) {
         nextButton.addEventListener('click', () => {
-            moveToSlide(currentIndex + 1);
+            const slideWidth = track.querySelector('.carousel-slide').offsetWidth;
+            const maxScroll = track.scrollWidth - track.clientWidth;
+            
+            if (track.scrollLeft >= maxScroll - 5) {
+                // Chegou no fim da galeria, volta pro inicio suave
+                track.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                track.scrollBy({ left: slideWidth, behavior: 'smooth' });
+            }
         });
         
         prevButton.addEventListener('click', () => {
-            moveToSlide(currentIndex - 1);
-        });
-        
-        // Auto-play
-        setInterval(() => {
-            if (!isTransitioning) {
-                moveToSlide(currentIndex + 1);
+            const slideWidth = track.querySelector('.carousel-slide').offsetWidth;
+            
+            if (track.scrollLeft <= 5) {
+                // Chegou no começo, vai pro final suave
+                track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' });
+            } else {
+                track.scrollBy({ left: -slideWidth, behavior: 'smooth' });
             }
-        }, 5000);
-
-        // Recalcular posição no redimensionamento da janela
-        window.addEventListener('resize', () => {
-            moveToSlide(currentIndex, false);
         });
     }
 });
