@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const mensagem = document.getElementById('mensagem').value;
 
             // Formata a mensagem para o URL do WhatsApp
-            let zapText = `Olá, quero solicitar uma cotação de sucata de metal duro / tungstênio.\n\n`;
+            let zapText = `Olá! Gostaria de saber mais sobre este produto e solicitar uma avaliação.\n\n`;
             zapText += `*Nome:* ${nome}\n`;
             zapText += `*Cidade:* ${cidade}\n`;
             zapText += `*Material:* ${material}\n`;

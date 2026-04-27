@@ -1213,3 +1213,62 @@ img {
   .step-number { width: 40px; height: 40px; font-size: 1rem; }
   .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 28px;}
 }
+
+/* =========================================
+   PURCHASED MATERIALS SECTION
+   ========================================= */
+.purchased-materials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.purchased-material-card {
+  background: var(--bg-white);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.purchased-material-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-gold);
+}
+
+.purchased-material-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-bottom: 3px solid var(--accent-gold);
+}
+
+.purchased-material-info {
+  padding: 20px;
+  text-align: center;
+  background-color: var(--bg-white);
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.purchased-material-info h3 {
+  font-size: 1.1rem;
+  color: var(--bg-main);
+  margin: 0;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .purchased-materials-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+}
