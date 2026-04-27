@@ -128,20 +128,6 @@
             }
         }
         @media (max-width: 600px) {
-            .materials-carousel-track .material-card {
-                flex: 0 0 100%;
-                min-width: 100%;
-            }
-            .carousel-slide {
-                flex: 0 0 100% !important;
-                min-width: 100% !important;
-            }
-            .materials-carousel-wrapper { padding: 0 35px; }
-            .materials-nav {
-                width: 35px;
-                height: 35px;
-            }
-            .materials-nav.prev { left: 0px; top: 40%; }
             .materials-nav.next { right: 0px; top: 40%; }
         }
     </style>
@@ -240,7 +226,7 @@
         <!-- Por Que Negociar - Nova Seção de Benefícios -->
         <section class="benefits-v2 section-padding bg-dark">
             <div class="container">
-                <div class="section-header reveal-up">
+                <div class="section-header reveal-up light-text">
                     <h2 class="section-title text-white">Por que negociar com a Metal Duro Net?</h2>
                     <p class="section-subtitle text-light">Diferenciais que garantem a melhor experiência e valorização do seu material.</p>
                 </div>
@@ -330,98 +316,93 @@
 
 
 
-        <!-- Como Funciona -->
-        <section id="como-funciona" class="how-it-works bg-dark section-padding">
+        <!-- Processo de Compra V2 -->
+        <section id="como-funciona" class="how-it-works-v2 section-padding bg-darker">
             <div class="container">
                 <div class="section-header reveal-up light-text">
-                    <h2 class="section-title">Processo de Compra</h2>
-                    <p class="section-subtitle">Simples, seguro e totalmente transparente. Veja como vender seu lote em 5 passos.</p>
+                    <h2 class="section-title">Como funciona a negociação?</h2>
+                    <p class="section-subtitle">Um processo transparente e ágil pensado na sua comodidade.</p>
                 </div>
 
-                <div class="timeline">
-                    <!-- Step 1 -->
-                    <div class="timeline-step reveal-up">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h4>Envie fotos e informações</h4>
-                            <p>Chame no WhatsApp enviando fotos nítidas do lote e peso aproximado.</p>
+                <div class="steps-grid-v2">
+                    <div class="step-card-v2 reveal-up" style="--delay: 0.1s">
+                        <div class="step-header-v2">
+                            <span class="step-num">01</span>
+                            <i class="ph-fill ph-camera"></i>
                         </div>
+                        <h4>Fotos do Lote</h4>
+                        <p>Você nos envia fotos nítidas do material e o peso aproximado pelo WhatsApp.</p>
                     </div>
-                    <!-- Step 2 -->
-                    <div class="timeline-step reveal-up" style="--delay: 0.1s">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h4>Receba a avaliação inicial</h4>
-                            <p>Nossa equipe técnica faz uma análise prévia e envia uma proposta de cotação.</p>
+
+                    <div class="step-card-v2 reveal-up" style="--delay: 0.2s">
+                        <div class="step-header-v2">
+                            <span class="step-num">02</span>
+                            <i class="ph-fill ph-currency-dollar"></i>
                         </div>
+                        <h4>Cotação Rápida</h4>
+                        <p>Nossa equipe técnica analisa as imagens e envia a melhor oferta do dia.</p>
                     </div>
-                    <!-- Step 3 -->
-                    <div class="timeline-step reveal-up" style="--delay: 0.2s">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h4>Faça o envio do material</h4>
-                            <p>Após aceitar a proposta, se o envio for via Correios, orientamos a embalagem e o despacho.</p>
+
+                    <div class="step-card-v2 reveal-up" style="--delay: 0.3s">
+                        <div class="step-header-v2">
+                            <span class="step-num">03</span>
+                            <i class="ph-fill ph-package"></i>
                         </div>
+                        <h4>Envio Seguro</h4>
+                        <p>Você despacha via Correios ou agendamos a retirada (para grandes lotes ou SP).</p>
                     </div>
-                    <!-- Step 4 -->
-                    <div class="timeline-step reveal-up" style="--delay: 0.3s">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h4>Conferência e pesagem</h4>
-                            <p>Ao receber a mercadoria em nosso galpão, filmamos a abertura e realizamos a pesagem fina.</p>
+
+                    <div class="step-card-v2 reveal-up" style="--delay: 0.4s">
+                        <div class="step-header-v2">
+                            <span class="step-num">04</span>
+                            <i class="ph-fill ph-magnifying-glass"></i>
                         </div>
+                        <h4>Conferência</h4>
+                        <p>Ao chegar, filmamos a abertura e pesagem do lote em nosso galpão.</p>
                     </div>
-                    <!-- Step 5 -->
-                    <div class="timeline-step reveal-up" style="--delay: 0.4s">
-                        <div class="step-number">5</div>
-                        <div class="step-content">
-                            <h4>Pagamento</h4>
-                            <p>Com as informações batendo, transferimos o valor acordado imediatamente para sua conta.</p>
+
+                    <div class="step-card-v2 reveal-up" style="--delay: 0.5s">
+                        <div class="step-header-v2">
+                            <span class="step-num">05</span>
+                            <i class="ph-fill ph-check-circle"></i>
                         </div>
+                        <h4>PIX na Conta</h4>
+                        <p>Com tudo ok, o pagamento é feito imediatamente na sua conta bancária.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Envio pelos Correios -->
-        <section id="envio-correios" class="correios section-padding bg-light">
-            <div class="container correios-container">
-                <div class="correios-content reveal-up">
-                    <div class="badge">Diferencial</div>
-                    <h2 class="section-title">Venda sua sucata sem sair da sua cidade</h2>
-                    <p>Se você está em outra cidade ou estado, pode enviar sua sucata de metal duro e tungstênio pelos Correios. Para materiais no estado de São Paulo ou para volumes maiores, podemos agendar a retirada diretamente com nossa equipe. Orientamos todo o processo para que o envio ou coleta seja feito de forma simples, prática e organizada.</p>
+        <!-- Envio pelos Correios V2 -->
+        <section id="envio-correios" class="correios-v2 section-padding bg-light">
+            <div class="container">
+                <div class="envio-card-v2 reveal-up">
+                    <div class="envio-header-v2">
+                        <h2 class="section-title">Venda de qualquer lugar do Brasil</h2>
+                        <p>Desenvolvemos um método logístico simplificado para você negociar sem sair de casa.</p>
+                    </div>
                     
-                    <div class="correios-features">
-                        <div class="c-feature">
-                            <i class="ph ph-headset"></i>
-                            <div>
-                                <h5>Atendimento à distância</h5>
-                                <span>Todo o alinhamento é feito online, não importa onde você está.</span>
-                            </div>
+                    <div class="envio-steps-v2">
+                        <div class="envio-item-v2">
+                            <div class="icon-circle"><i class="ph ph-package"></i></div>
+                            <h4>Você embala</h4>
+                            <p>Damos todas as dicas de como preparar o material com segurança.</p>
                         </div>
-                        <div class="c-feature">
-                            <i class="ph ph-package"></i>
-                            <div>
-                                <h5>Orientação no envio</h5>
-                                <span>Fornecemos auxílio de como preparar as caixas de sucata para os Correios.</span>
-                            </div>
+                        <div class="envio-item-v2">
+                            <div class="icon-circle"><i class="ph ph-truck"></i></div>
+                            <h4>Você despacha</h4>
+                            <p>Leva até os Correios ou agendamos a coleta do seu lote.</p>
                         </div>
-                        <div class="c-feature">
-                            <i class="ph ph-video-camera"></i>
-                            <div>
-                                <h5>Recebimento e conferência</h5>
-                                <span>Tudo documentado por vídeo assim que a caixa chega, garantindo transparência.</span>
-                            </div>
+                        <div class="envio-item-v2">
+                            <div class="icon-circle"><i class="ph ph-wallet"></i></div>
+                            <h4>Você recebe</h4>
+                            <p>Pagamento garantido assim que o material é conferido.</p>
                         </div>
                     </div>
                     
-                    <div class="correios-disclaimer">
-                        <i class="ph-fill ph-info"></i> Os detalhes do envio e da negociação são alinhados diretamente no atendimento.
+                    <div class="envio-footer-v2">
+                        <p><i class="ph-fill ph-info"></i> Atendemos indústrias, oficinas e profissionais em todo o território nacional.</p>
                     </div>
-                </div>
-                
-                <div class="correios-img reveal-up" style="--delay: 0.2s">
-                    <img src="assets/carrossel-imagens/ferramentas-metal-duro.jpg" alt="Sucata de Metal Duro separada para envio Correios" class="img-fluid rounded-premium shadow-lg">
                 </div>
             </div>
         </section>
@@ -434,24 +415,19 @@
                     <p class="section-subtitle">Algumas fotos dos tipos de sucatas contendo tungstênio que mais adquirimos de empresas parceiras no Brasil afora.</p>
                 </div>
 
-                <div class="carousel-container reveal-up">
-                    <div class="carousel-track">
-                        <div class="carousel-slide"><img src="assets/carrossel-imagens/compra-sucata-metal-duro.jpg" alt="Compra de Sucata de Metal Duro no Brasil"></div>
-                        <div class="carousel-slide"><img src="assets/carrossel-imagens/sucata-tungstenio-venda.jpg" alt="Lote de Sucata de Tungstênio para venda"></div>
-                        <div class="carousel-slide"><img src="assets/carrossel-imagens/insertos-metal-duro-usados.jpg" alt="Insertos de Cortadores e Pastilhas de Metal Duro Usados"></div>
-                        <div class="carousel-slide"><img src="assets/carrossel-imagens/brocas-metal-duro-reciclagem.jpg" alt="Brocas de Metal Duro prontas para reciclagem"></div>
-                        <div class="carousel-slide"><img src="assets/carrossel-imagens/widia-sucata-compramos.jpg" alt="Widias e ferramentas de corte em sucata"></div>
-                        <div class="carousel-slide"><img src="assets/carrossel-imagens/fresas-metal-duro-venda.jpg" alt="Fresas variadas de metal duro"></div>
-                        <div class="carousel-slide"><img src="assets/carrossel-imagens/pastilhas-metal-duro-usadas.jpg" alt="Pastilhas industriais mistas de tungstênio"></div>
-                        <div class="carousel-slide"><img src="assets/carrossel-imagens/ferramentas-metal-duro.jpg" alt="Sucata de Fresas e Brocas separadas"></div>
-                        <div class="carousel-slide"><img src="assets/carrossel-imagens/po-de-tungstenio.jpg" alt="Recolhimento de pó de tungstênio industrial"></div>
-                        <div class="carousel-slide"><img src="assets/carrossel-imagens/borra-de-retifica-tungstenio.jpg" alt="Lodo e borra de retífica com carboneto de tungstênio"></div>
-                        <div class="carousel-slide"><img src="assets/carrossel-imagens/ligas-de-tungstenio-sucata.jpg" alt="Outras ligas de tungstênio"></div>
-                        <div class="carousel-slide"><img src="assets/carrossel-imagens/avaliacao-sucata-metal-duro.jpg" alt="Avaliação de sucata de metal duro no peso"></div>
-                    </div>
-                    <button class="carousel-button prev"><i class="ph ph-caret-left"></i></button>
-                    <button class="carousel-button next"><i class="ph ph-caret-right"></i></button>
-                    <div class="carousel-indicators"></div>
+                <div class="gallery-grid-v2 reveal-up">
+                    <div class="gallery-item-v2"><img src="assets/carrossel-imagens/compra-sucata-metal-duro.jpg" alt="Compra de Sucata de Metal Duro"></div>
+                    <div class="gallery-item-v2"><img src="assets/carrossel-imagens/sucata-tungstenio-venda.jpg" alt="Lote de Sucata de Tungstênio"></div>
+                    <div class="gallery-item-v2"><img src="assets/carrossel-imagens/insertos-metal-duro-usados.jpg" alt="Insertos de Metal Duro Usados"></div>
+                    <div class="gallery-item-v2"><img src="assets/carrossel-imagens/brocas-metal-duro-reciclagem.jpg" alt="Brocas de Metal Duro"></div>
+                    <div class="gallery-item-v2"><img src="assets/carrossel-imagens/widia-sucata-compramos.jpg" alt="Widias e ferramentas de corte"></div>
+                    <div class="gallery-item-v2"><img src="assets/carrossel-imagens/fresas-metal-duro-venda.jpg" alt="Fresas variadas de metal duro"></div>
+                    <div class="gallery-item-v2"><img src="assets/carrossel-imagens/pastilhas-metal-duro-usadas.jpg" alt="Pastilhas industriais"></div>
+                    <div class="gallery-item-v2"><img src="assets/carrossel-imagens/ferramentas-metal-duro.jpg" alt="Sucata de Fresas e Brocas"></div>
+                    <div class="gallery-item-v2"><img src="assets/carrossel-imagens/po-de-tungstenio.jpg" alt="Pó de tungstênio industrial"></div>
+                    <div class="gallery-item-v2"><img src="assets/carrossel-imagens/borra-de-retifica-tungstenio.jpg" alt="Borra de retífica"></div>
+                    <div class="gallery-item-v2"><img src="assets/carrossel-imagens/ligas-de-tungstenio-sucata.jpg" alt="Outras ligas de tungstênio"></div>
+                    <div class="gallery-item-v2"><img src="assets/carrossel-imagens/avaliacao-sucata-metal-duro.jpg" alt="Avaliação de sucata"></div>
                 </div>
             </div>
         </section>
