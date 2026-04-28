@@ -998,13 +998,6 @@ img {
   color: var(--accent-blue);
 }
 
-.label-premium {
-  color: var(--accent-gold) !important;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-size: 0.8rem !important;
-}
-
 .form-group input, 
 .form-group select, 
 .form-group textarea {
