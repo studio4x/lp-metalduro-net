@@ -10,6 +10,9 @@
   
   --accent-gold: #ff9f43; /* Laranja Pastel Premium */
   --accent-gold-hover: #f39c12;
+
+  --whatsapp-green: #25D366;
+  --whatsapp-green-hover: #128C7E;
   
   --accent-blue: #0f172a; /* Azul Marinho (para detalhes escuros) */
   --accent-blue-hover: #475569;
@@ -116,16 +119,16 @@ img {
 }
 
 .btn-primary {
-  background-color: var(--accent-gold);
+  background-color: var(--whatsapp-green);
   color: var(--text-white);
-  box-shadow: 0 4px 14px rgba(249, 115, 22, 0.4);
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
 }
 
 .btn-primary:hover {
-  background-color: var(--accent-gold-hover);
+  background-color: var(--whatsapp-green-hover);
   transform: translateY(-2px);
-  color: var(--bg-main);
-  box-shadow: 0 6px 20px rgba(200, 155, 60, 0.6);
+  color: var(--text-white);
+  box-shadow: 0 6px 20px rgba(18, 140, 126, 0.4);
 }
 
 .btn-outline {
@@ -197,8 +200,7 @@ img {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+  background-color: #101729;
   z-index: 1000;
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
@@ -235,7 +237,7 @@ img {
 }
 
 .header .logo {
-  color: var(--bg-main);
+  color: var(--text-white);
 }
 
 .logo-accent {
@@ -250,7 +252,7 @@ img {
 }
 
 .nav-link {
-  color: var(--text-secondary);
+  color: var(--text-white);
   font-weight: 500;
   font-size: 0.95rem;
   position: relative;
@@ -265,7 +267,7 @@ img {
   font-size: 24px;
   background: none;
   border: none;
-  color: var(--bg-main);
+  color: var(--text-white);
   cursor: pointer;
 }
 
@@ -1218,7 +1220,7 @@ img {
     top: 100%;
     left: 0;
     width: 100%;
-    background: var(--bg-white);
+    background: #101729;
     padding: 20px;
     box-shadow: 0 10px 10px rgba(0,0,0,0.1);
     transform: translateY(-200%); /* Afasta mais para cima */
